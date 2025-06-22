@@ -92,29 +92,6 @@ Runs on: http://localhost:8000
 ---
 
 ## 📂 Folder Structure
-pdf-qa-chatbot:
-  backend:
-    main.py: "FastAPI application with endpoints"
-    qa_engine.py: "Handles PDF processing, FAISS indexing, and QA"
-    test_generator.py: "Generates test PDFs from question bank"
-    uploads/: "Directory for uploaded PDF files"
-    faiss_index/: "Stores FAISS indexes for each PDF"
-    pyq_data:
-      questions.csv: "CSV dataset for test generation"
-  frontend:
-    public:
-      index.html: "Root HTML template"
-    src:
-      App.js: "Main React component for chatbot UI"
-      App.css: "Styling with gradients and chat animations"
-      index.js: "React app entry point"
-      components:
-        Upload.js: "Reusable upload component"
-        Question.js: "Reusable Q&A component"
-    package.json: "Frontend dependencies and scripts"
-  generated_pdfs/: "Directory for test PDFs created dynamically"
-  README.md: "Documentation and setup instructions"
-  .env: "Environment variables (API keys, etc.)"
 
 
 pdf-qa-chatbot/

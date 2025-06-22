@@ -92,34 +92,32 @@ Runs on: http://localhost:8000
 ---
 
 ## 📂 Folder Structure
+pdf-qa-chatbot:
+  backend:
+    main.py: "FastAPI application with endpoints"
+    qa_engine.py: "Handles PDF processing, FAISS indexing, and QA"
+    test_generator.py: "Generates test PDFs from question bank"
+    uploads/: "Directory for uploaded PDF files"
+    faiss_index/: "Stores FAISS indexes for each PDF"
+    pyq_data:
+      questions.csv: "CSV dataset for test generation"
+  frontend:
+    public:
+      index.html: "Root HTML template"
+    src:
+      App.js: "Main React component for chatbot UI"
+      App.css: "Styling with gradients and chat animations"
+      index.js: "React app entry point"
+      components:
+        Upload.js: "Reusable upload component"
+        Question.js: "Reusable Q&A component"
+    package.json: "Frontend dependencies and scripts"
+  generated_pdfs/: "Directory for test PDFs created dynamically"
+  README.md: "Documentation and setup instructions"
+  .env: "Environment variables (API keys, etc.)"
 
 ```
 
-pdf-qa-chatbot/
-├── backend/
-│   ├── main.py                 # FastAPI main app with endpoints
-│   ├── qa_engine.py            # PDF indexing & QA logic using LangChain & FAISS
-│   ├── test_generator.py       # Test generation from CSV data
-│   ├── uploads/                # Uploaded PDF storage
-│   ├── faiss_index/            # Vector store saved indexes
-│   └── pyq_data/
-│       └── questions.csv       # Question bank for test generation
-│
-├── frontend/
-│   ├── public/
-│   │   └── index.html          # Root HTML template
-│   ├── src/
-│   │   ├── App.js              # Main React component (chat UI)
-│   │   ├── App.css             # Styling (animated background, chat bubbles)
-│   │   ├── index.js            # React DOM entry
-│   │   ├── components/
-│   │   │   ├── Upload.js       # File upload component (optional use)
-│   │   │   └── Question.js     # Question interaction component (optional use)
-│   └── package.json            # React dependencies and scripts
-│
-├── generated_pdfs/            # Auto-generated test PDFs
-├── README.md                  # Project documentation
-└── .env                       # Environment variables (e.g., API keys)
 
 ```
 

@@ -116,6 +116,34 @@ pdf-qa-chatbot:
   README.md: "Documentation and setup instructions"
   .env: "Environment variables (API keys, etc.)"
 
+
+pdf-qa-chatbot/
+├── backend/
+│   ├── main.py                 # FastAPI main app with endpoints
+│   ├── qa_engine.py            # PDF indexing & QA logic using LangChain & FAISS
+│   ├── test_generator.py       # Test generation from CSV data
+│   ├── uploads/                # Uploaded PDF storage
+│   ├── faiss_index/            # Vector store saved indexes
+│   └── pyq_data/
+│       └── questions.csv       # Question bank for test generation
+│
+├── frontend/
+│   ├── public/
+│   │   └── index.html          # Root HTML template
+│   ├── src/
+│   │   ├── App.js              # Main React component (chat UI)
+│   │   ├── App.css             # Styling (animated background, chat bubbles)
+│   │   ├── index.js            # React DOM entry
+│   │   ├── components/
+│   │   │   ├── Upload.js       # File upload component (optional use)
+│   │   │   └── Question.js     # Question interaction component (optional use)
+│   └── package.json            # React dependencies and scripts
+│
+├── generated_pdfs/            # Auto-generated test PDFs
+├── README.md                  # Project documentation
+└── .env                       # Environment variables (e.g., API keys)
+
+
 ```
 
 

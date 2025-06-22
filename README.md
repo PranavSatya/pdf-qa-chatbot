@@ -96,16 +96,30 @@ Runs on: http://localhost:8000
 ```
 
 pdf-qa-chatbot/
-├── frontend/              # React UI
-├── backend/               # FastAPI server
-│   ├── main.py            # API endpoints
-│   ├── qa\_engine.py       # PDF indexing & question answering
-│   ├── test\_generator.py  # Test generation logic
-│   └── uploads/           # Uploaded PDFs
-├── generated\_pdfs/        # Output test PDFs
-├── questions.csv          # MCQ bank
-├── README.md
-└── .env                   # API keys
+├── backend/
+│   ├── main.py                 # FastAPI main app with endpoints
+│   ├── qa_engine.py            # PDF indexing & QA logic using LangChain & FAISS
+│   ├── test_generator.py       # Test generation from CSV data
+│   ├── uploads/                # Uploaded PDF storage
+│   ├── faiss_index/            # Vector store saved indexes
+│   └── pyq_data/
+│       └── questions.csv       # Question bank for test generation
+│
+├── frontend/
+│   ├── public/
+│   │   └── index.html          # Root HTML template
+│   ├── src/
+│   │   ├── App.js              # Main React component (chat UI)
+│   │   ├── App.css             # Styling (animated background, chat bubbles)
+│   │   ├── index.js            # React DOM entry
+│   │   ├── components/
+│   │   │   ├── Upload.js       # File upload component (optional use)
+│   │   │   └── Question.js     # Question interaction component (optional use)
+│   └── package.json            # React dependencies and scripts
+│
+├── generated_pdfs/            # Auto-generated test PDFs
+├── README.md                  # Project documentation
+└── .env                       # Environment variables (e.g., API keys)
 
 ```
 

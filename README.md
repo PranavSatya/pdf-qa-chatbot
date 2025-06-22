@@ -1,7 +1,5 @@
 # pdf-qa-chatbot
-Sure Pranav! Here's the full `README.md` content in **plain text format** so you can copy it **directly** and paste it into your GitHub repo manually:
 
----
 
 ```
 # 🤖 Lexa – PDF Q&A Chatbot with Test Generator

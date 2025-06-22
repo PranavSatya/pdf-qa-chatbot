@@ -1,0 +1,149 @@
+
+## 🧠 Lexa – PDF Q\&A Assistant
+
+Lexa is an interactive chatbot application that allows users to upload PDF files (such as resumes, textbooks, or PYQs) and ask questions about the content. It leverages modern NLP techniques to extract and query the PDF data using vector embeddings.
+
+---
+
+### 📸 Demo Screenshot
+
+![Lexa Chatbot Interface](https://your-screenshot-link.com)
+
+---
+
+## 🔧 Features
+
+* 📄 PDF Upload & FAISS Vector Indexing
+* 💬 Chat interface for querying PDF contents
+* 🧠 LLM-powered answer generation using LangChain & HuggingFace
+* 🎨 Beautiful animated UI with background gradients
+* 📥 Auto-scroll, typing animation, and WhatsApp-style chat bubbles
+
+---
+
+## 🧱 Application Architecture
+
+```
+📦 Lexa-PDF-QA
+├── backend/
+│   ├── main.py                  # FastAPI server endpoints
+│   ├── qa_engine.py             # Core logic for loading, indexing, answering
+│   ├── faiss_index/             # Saved FAISS indexes per uploaded PDF
+│   └── uploads/                 # Temporarily stores uploaded PDFs
+│
+├── frontend/
+│   ├── public/index.html        # Base HTML template
+│   ├── src/
+│   │   ├── App.js               # Main chat interface
+│   │   ├── App.css              # Styling and animations
+│   │   ├── index.js             # ReactDOM render
+│   │   └── components/          # Modular components if needed
+│   └── package.json             # React dependencies
+│
+└── README.md
+```
+
+---
+
+## 🚀 Getting Started
+
+### 📦 Backend Setup
+
+1. **Install dependencies:**
+
+```bash
+cd backend
+python -m venv venv
+source venv/Scripts/activate  # (Windows)
+pip install -r requirements.txt
+```
+
+2. **Install additional packages if needed:**
+
+```bash
+pip install faiss-cpu pypdf sentence-transformers langchain langchain-community
+```
+
+3. **Run the server:**
+
+```bash
+uvicorn main:app --reload
+```
+
+---
+
+### 🌐 Frontend Setup
+
+1. **Install dependencies:**
+
+```bash
+cd frontend
+npm install
+```
+
+2. **Start the React app:**
+
+```bash
+npm start
+```
+
+3. The app will be available at [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🔌 API Documentation
+
+### 1. `POST /upload/`
+
+* **Description**: Uploads a PDF file and creates FAISS index.
+* **Payload**: `multipart/form-data`
+
+  * `file`: PDF file
+* **Response**:
+
+```json
+{
+  "filename": "Resume.pdf"
+}
+```
+
+---
+
+### 2. `POST /ask/`
+
+* **Description**: Asks a question about an uploaded PDF.
+* **Payload**: `form-data`
+
+  * `filename`: Name of uploaded file
+  * `question`: User query
+* **Response**:
+
+```json
+{
+  "answer": "The user has worked on Smart Agriculture, AI Traffic Management, etc."
+}
+```
+
+---
+
+## ⚙️ Tech Stack
+
+* **Frontend**: React.js, Tailwind (optional), CSS animations
+* **Backend**: FastAPI, LangChain, HuggingFace Transformers
+* **Vector Store**: FAISS
+* **Embeddings**: `all-MiniLM-L6-v2` via `sentence-transformers`
+
+---
+
+## ✨ Future Improvements
+
+* PDF preview pane on upload
+* Highlight text snippets used to answer
+* Chat history persistence
+* User login/session storage
+
+---
+
+## 🧑‍💻 Author
+
+Made by [Pranav Satya](https://github.com/pranavsatya).
